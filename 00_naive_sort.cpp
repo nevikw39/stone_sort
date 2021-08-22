@@ -23,7 +23,7 @@ int main()
     int n;
     cin >> n;
     vector<int> v(n);
-    mt19937 rand((random_device())()); // create an object with random seed that generate random numbers using Mersenne Twister Algo
+    mt19937 rand((random_device())()); // create an object with random seed that generates random numbers using Mersenne Twister Algo
     for (int &i : v)
         i = rand();
     cout << "Before sorting:\n";
