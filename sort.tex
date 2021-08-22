@@ -56,6 +56,11 @@
 	
 	\begin{definition}
 		Rearrange elements in an array into a sort of order.
+		
+		\begin{itemize}
+			\item Ranking
+			\item Prerequisite for other algorithms such as binary search, greedy, ...
+		\end{itemize}
 	\end{definition}
 	
 	\begin{block}{Reason}
@@ -74,10 +79,10 @@
 		\Procedure{Na\"{i}ve Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
             \State$n\gets\#a$
             \State$\langle b_n\rangle\gets\{0\}$
-            \For{$i \in [0, n)$}
+            \For{$i\in[0, n)$}
                 \State$min\gets\infty$
-                \For{$j \in a$}
-                	\If{$j < min \land(\lnot i\lor j > b_{i-1}$)}
+                \For{$j\in a$}
+                	\If{$j < min\land(\lnot i\lor j > b_{i-1})$}
 						\State$min\gets j$
 					\EndIf
 				\EndFor
@@ -90,7 +95,20 @@
 
 \frame
 {
-	\frametitle{Bubble sort}
+	\frametitle{Bubble Sort}
+	
+	\begin{algorithmic}
+		\Procedure{Bubble Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
+            \For{$i\in[0, n-1)$}
+                \For{$j\in[0, n-1-i)$}
+                	\If{$a_j > a_{j + 1}$}
+						\State\Call{swap}{$a_j, a_{j + 1}$}
+					\EndIf
+				\EndFor
+            \EndFor
+            \State\Return$a$
+        \EndProcedure
+	\end{algorithmic}
 }
 
 \section{原理}
