@@ -24,7 +24,7 @@
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 2pt
 
-\setCJKmainfont{Songti SC}
+\setCJKmainfont{Songti TC}
 \setCJKsansfont{Apple LiGothic}
 
 \title{排序演算法}
@@ -58,15 +58,15 @@
 		Rearrange elements in an array into a sort of order.
 		
 		\begin{itemize}
-			\item Ranking
-			\item Prerequisite for other algorithms such as binary search, greedy, ...
+			\item Monotonicity
+			\item Permutation of original array
 		\end{itemize}
 	\end{definition}
 	
 	\begin{block}{Reason}
 		\begin{itemize}
 			\item Ranking
-			\item Prerequisite for other algorithms such as binary search, greedy, ...
+			\item Prerequisite of other algorithms such as binary search, greedy, ...
 		\end{itemize}
 	\end{block}
 }
@@ -112,6 +112,18 @@
 }
 
 \section{原理}
+
+\frame
+{
+	\frametitle{分（而）治（之）法 Divide \& Conquer}
+	
+	\begin{enumerate}
+		\item Divide
+		\item Conquer
+		\item Combine
+	\end{enumerate}
+
+}
 
 \subsection{Merge Sort}
 
