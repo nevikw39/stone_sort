@@ -1,0 +1,104 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit} % // Activate for custom appearance
+
+\usepackage{xeCJK}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{algpseudocode}
+
+\definecolor{nthu}{HTML}{7F1084}
+
+\usetheme{Warsaw}
+\usecolortheme[named=nthu]{structure}
+\useinnertheme{rounded}
+\useoutertheme{infolines}
+\usefonttheme{serif}
+
+\xeCJKsetup{CJKglue=\hspace{0pt plus .12 \baselineskip }}
+\xeCJKsetup{RubberPunctSkip=false}
+\xeCJKsetup{PunctStyle=plain}
+\xeCJKsetup{CheckSingle=true}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 2pt
+
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Apple LiGothic}
+
+\title{排序演算法}
+\subtitle{合併排序、快速排序……}
+\author{nevikw39}
+\institute{點石學園}
+\date{\today}
+
+\AtBeginSection{
+	\frame
+	{
+%		\frametitle{Outline}
+		\sectionpage
+		\tableofcontents[currentsection, hideothersubsections]
+	}
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{序}
+
+\frame
+{
+	\frametitle{Introduction to Sorting}
+	
+	\begin{definition}
+		Rearrange elements in an array into a sort of order.
+	\end{definition}
+	
+	\begin{block}{Reason}
+		\begin{itemize}
+			\item Ranking
+			\item Prerequisite for other algorithms such as binary search, greedy, ...
+		\end{itemize}
+	\end{block}
+}
+
+\frame
+{
+	\frametitle{A na\"{i}ve approach}
+	
+	\begin{algorithmic}
+		\Procedure{Na\"{i}ve Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
+            \State$n\gets\#a$
+            \State$\langle b_n\rangle\gets\{0\}$
+            \For{$i \in [0, n)$}
+                \State$min\gets\infty$
+                \For{$j \in a$}
+                	\If{$j < min \land(\lnot i\lor j > b_{i-1}$)}
+						\State$min\gets j$
+					\EndIf
+				\EndFor
+				\State$b_i\gets min$
+            \EndFor
+            \State\Return$b$
+        \EndProcedure
+	\end{algorithmic}
+}
+
+\frame
+{
+	\frametitle{Bubble sort}
+}
+
+\section{原理}
+
+\subsection{Merge Sort}
+
+\subsection{Quick Sort}
+
+\section{實務}
+
+\end{document}
