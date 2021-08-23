@@ -228,9 +228,9 @@
 	\frametitle{合併排序}
 	
 	\begin{enumerate}
-		\item<2-> Divide\\Split array into left and right subarrays ($b = 2$)
-		\item<3-> Conquer\\Sort two subarrays recursively ($a = 2$)
-		\item<4-> Combine\\Merge two sorted subarrays in $O(n)$
+		\item<1-> Divide\\Split array into left and right subarrays ($b = 2, O(1)$)
+		\item<2-> Conquer\\Sort two subarrays recursively ($a = 2$)
+		\item<3-> Combine\\Merge two sorted subarrays in $O(n)$
 	\end{enumerate}
 }
 
@@ -242,9 +242,9 @@
 	
 	Let \texttt{itr}, \texttt{jtr} point to the begin of $a, b$ respectively.\pause
 	
-	If $\texttt{itr} \neq \text{the end of }a \land \texttt{jtr} \neq \text{the end of }b$, then we choose the min one and increase the pointer.\pause
+	If $\texttt{itr} \neq \text{the end of }a \land \texttt{jtr} \neq \text{the end of }b$, then we choose the min one and forward the pointer.\pause
 	
-	Else if $\texttt{itr} \neq \text{the end of }a \lor \texttt{jtr} \neq \text{the end of }b$, then we choose the pointer and increase it.\pause
+	Else if $\texttt{itr} \neq \text{the end of }a \lor \texttt{jtr} \neq \text{the end of }b$, then we choose the pointer and forward it.\pause
 	
 	Repeat until $\texttt{itr} = \text{the end of }a \lor \texttt{jtr} = \text{the end of }b$.
 }
@@ -263,7 +263,7 @@
             \State$mid\gets\frac{begin+end}{2}, left\gets[begin, mid), right\gets[mid, end)$\Comment{1. Divide}
             \pause
             \State\Call{Merge Sort}{$left.begin(), left.end()$}\Comment{2. Conquer}
-            \State\Call{Merge Sort}{$right.begin(), right.end()$}, 
+            \State\Call{Merge Sort}{$right.begin(), right.end()$} 
             \pause
             \State$itr\gets left.begin(), jtr\gets right.begin()$
             \While{$begin\neq end$}\Comment{3. Combine}
@@ -400,10 +400,67 @@
 	\frametitle{快速排序}
 	
 	\begin{enumerate}
-		\item<2-> Divide\\ ($b = 2, O(n)$)
-		\item<3-> Conquer\\ ($a = 2$)
-		\item<4-> Combine\\Merge two sorted subarrays in $O(1)$
+		\item<1-> Divide\\Select a $pivot$ value and split the array into less slice and greater slice ($b = 2, O(n)$)
+		\item<2-> Conquer\\Sort two slices recursively ($a = 2$)
+		\item<3-> Combine\\Nothing to do, the array have been sorted. ($O(1)$)
 	\end{enumerate}
+}
+
+\frame
+{
+	\frametitle{原地分割 (in-place division)}
+	
+	How could we split the array into less slice and greater slice??\pause
+	
+	Suppose two slices are \texttt{[begin, itr)} and \texttt{[itr + 1, end)}.\pause
+	
+	Initially, \texttt{itr} = begin.\pause
+	
+	We traverse from \texttt{begin} to \texttt{pivot} with \texttt{jtr}.\pause
+	
+	If \texttt{*jtr < *pivot}, then we put it to \texttt{*itr} and forward \texttt{itr}.\pause
+	
+	Finally, swap \texttt{*itr} and \texttt{pivot}.
+}
+
+\frame
+{
+	\frametitle{Pivot}
+	
+	The choice of $pivot$ plays a significant role in the efficiency of Quicksort.\pause
+	
+	Examples in classical textbook ``Introduction to Algorithm'' by C., S., L., R. choose the last element to be $pivot$.\pause
+	
+	Nevertheless, fixed $pivot$ may run into troubles because if unfortunately $pivot$ is minimum or maximum every time, the time complexity would decline to $O(n^2)$.\pause
+	
+	With an eye to avoiding this, we can pick $pivot$ randomly or use the median of $\{*begin, *(\frac{begin+end}{2}), *(end-1)\}$.
+}
+
+\frame
+{
+	\frametitle{虛擬碼}
+	
+	\begin{algorithmic}
+		\Procedure{Quicksort}{$\{*begin, *end\}$}
+			\pause
+			\If{$end - begin \leq 1$}\Comment{0. Recursion boundary}
+				\State\Return
+			\EndIf
+			\pause
+            \State$itr\gets begin, pivot\gets end-1$\Comment{1. Divide}
+            \For{$jtr\gets begin; jtr \neq pivot; jtr\texttt{++}$}
+                \If{$*jtr < *pivot$}
+                    \State\Call{swap}{$*itr\texttt{++}, *jtr$}
+                \EndIf
+            \EndFor
+            \State\Call{swap}{$*itr, *pivot$}
+            \pause
+            \State\Call{Quicksort}{$begin, itr$}\Comment{2. Conquer}
+            \State\Call{Quicksort}{$itr+1, end$}
+            \pause
+            \State\Comment{3. Combine}
+        \EndProcedure
+	\end{algorithmic}
 }
 
 \section{實務}
