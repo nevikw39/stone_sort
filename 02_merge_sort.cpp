@@ -11,8 +11,7 @@ void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
         return;
     // 1. Divide
     auto mid = begin + ((end - begin) >> 1); // mid = (begin + end) / 2
-    vector<int> a(begin, mid);
-    vector<int> b(mid, end);
+    vector<int> a(begin, mid), b(mid, end);
     // 2. Conquer
     merge_sort(a.begin(), a.end());
     merge_sort(b.begin(), b.end());
@@ -30,7 +29,7 @@ void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
         else
             *begin = *jtr++;
     //// shorter version
-    // fpr (auto itr = a.begin(), jtr = b.begin(); begin != end; begin++)
+    // for (auto itr = a.begin(), jtr = b.begin(); begin != end; begin++)
     //     if (itr != a.end() && (jtr == b.end() || *itr < *jtr))
     //         *begin = *itr++;
     //     else
