@@ -73,22 +73,20 @@
 
 \frame
 {
-	\frametitle{A na\"{i}ve approach}
+	\frametitle{Na\"{i}ve Approach: Selection Sort}
 	
 	\begin{algorithmic}
-		\Procedure{Na\"{i}ve Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
-            \State$n\gets\#a$
-            \State$\langle b_n\rangle\gets\{0\}$
-            \For{$i\in[0, n)$}
-                \State$min\gets\infty$
-                \For{$j\in a$}
-                	\If{$j < min\land(\lnot i\lor j > b_{i-1})$}
-						\State$min\gets j$
+		\Procedure{Selection Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
+            \For{$i\in[0, n-1)$}
+                \State$index\_of\_min\gets i$
+                \For{$j\in[i+1, n)$}
+                	\If{$a_{index\_of\_min} > a_j$}
+						\State$index\_of\_min\gets j$
 					\EndIf
 				\EndFor
-				\State$b_i\gets min$
+				\State\Call{swap}{$a_i, a_{index\_of\_min}$}
             \EndFor
-            \State\Return$b$
+            \State\Return$a$
         \EndProcedure
 	\end{algorithmic}
 }
