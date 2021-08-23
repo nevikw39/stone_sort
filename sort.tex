@@ -65,6 +65,7 @@
 			\item Permutation of original array
 		\end{itemize}
 	\end{definition}
+	\pause
 	
 	\begin{block}{Reason}
 		\begin{itemize}
@@ -177,52 +178,22 @@
         		}
         	}
         	\only<12>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/20/black,3/110/accent,4/2021/accent}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<13>{
         		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/20/black,3/110/black,4/2021/black}{
         			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
-        	\only<14>{
+        	\only<13>{
         		\foreach \x/\val/\col in {0/8/black,1/27/secondary,2/20/secondary,3/110/black,4/2021/black}{
         			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
+        	\only<14>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
         	\only<15>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<16>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/accent,3/110/accent,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<17>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/accent,4/2021/accent}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<18>{
         		\foreach \x/\val/\col in {0/8/accent,1/20/accent,2/27/black,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<19>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<20>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/accent,3/110/accent,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
-        		}
-        	}
-        	\only<21->{
-        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/accent,4/2021/accent}{
         			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
@@ -267,7 +238,7 @@
 {
 	\frametitle{合併}
 	
-	Given $a, b$ are two sorted subarrays, how could we combine them to a sorted array efficiently??\pause
+	Given two sorted subarrays $a, b$, how could we combine them to a sorted array efficiently??\pause
 	
 	Let \texttt{itr}, \texttt{jtr} point to the begin of $a, b$ respectively.\pause
 	
@@ -289,14 +260,14 @@
 				\State\Return
 			\EndIf
 			\pause
-            \State$mid\gets\frac{begin+end}{2}, a\gets[begin, mid), b\gets[mid, end)$\Comment{1. Divide}
+            \State$mid\gets\frac{begin+end}{2}, left\gets[begin, mid), right\gets[mid, end)$\Comment{1. Divide}
             \pause
-            \State\Call{Merge Sort}{$a.begin(), a.end()$}\Comment{2. Conquer}
-            \State\Call{Merge Sort}{$b.begin(), b.end()$}, 
+            \State\Call{Merge Sort}{$left.begin(), left.end()$}\Comment{2. Conquer}
+            \State\Call{Merge Sort}{$right.begin(), right.end()$}, 
             \pause
-            \State$itr\gets a.begin(), jtr\gets b.begin()$
+            \State$itr\gets left.begin(), jtr\gets right.begin()$
             \While{$begin\neq end$}\Comment{3. Combine}
-            	\If{$itr\neq a.end()\land(jtr = b.end()\lor *itr<*jtr)$}
+            	\If{$itr\neq left.end()\land(jtr = right.end()\lor *itr<*jtr)$}
 					\State$*begin\texttt{++}\gets*itr\texttt{++}$
 				\Else
 					\State$*begin\texttt{++}\gets*jtr\texttt{++}$
@@ -322,26 +293,36 @@
         		}
         	}
         	\only<3>{
-        		\foreach \x/\val in {0/8,1/27,4/2021,6/110,7/20}{
+        		\foreach \x/\val in {0/8,2/27,4/2021,5/110,6/20}{
         			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<4>{
-        		\foreach \x/\val in {0/8,1/27,5/2021,8/110,10/20}{
+        		\foreach \x/\val in {0/8,1/27,3/2021,4/110,5/20}{
         			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<5>{
-        		\foreach \x/\val in {0/8,1/27,4/2021,6/20,7/110}{
+        		\foreach \x/\val in {0/8,1/27,4/2021,6/110,7/20}{
         			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<6>{
+        		\foreach \x/\val in {0/8,1/27,5/2021,8/110,10/20}{
+        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<7>{
+        		\foreach \x/\val in {0/8,1/27,4/2021,6/20,7/110}{
+        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<8>{
         		\foreach \x/\val in {0/8,1/27,3/20,4/110,5/2021}{
         			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
-        	\only<7->{
+        	\only<9->{
         		\foreach \x/\val in {0/8,1/20,2/27,3/110,4/2021}{
         			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
@@ -350,7 +331,80 @@
 	\end{center}
 }
 
-\subsection{Quick Sort}
+\frame
+{
+	\frametitle{LeetCode 0004. Median of Two Sorted Arrays (Hard!?)}
+	
+	\begin{definition}
+		For an array $a$ whose size is $n$, if $n$ is odd, then its median is $a_{n/ 2}$; otherwise, it is $\frac{a_{n/2} + a_{n/2 - 1}}{2}$
+	\end{definition}
+	\pause
+	
+	\begin{block}{Algorithm}
+		Obviously, all we have to do is to perform the combine process of merge sort.
+	\end{block}
+}
+
+\frame
+{
+	\frametitle{逆序對 (Inversion) 數量}
+	
+	\begin{definition}
+		Given a sequence $S$. If $i < j \iff S_i > S_j$, then $(i, j)$ or $(S_i, S_j)$ is called a \textbf{inversion} of $S$.
+	\end{definition}
+	\pause
+	
+	\begin{block}{Idea}
+		$\forall i \in [0, |S|)$, $\forall j \in [i, |S|)$, count whether $i < j \iff S_i > S_j$.
+	\end{block}
+	\pause
+	
+	\begin{block}{Algorithm}
+		When combining two sorted subarrays, if $\texttt{*itr} > \texttt{*jtr}$, then a \textbf{inversion} exists, and \texttt{*(itr + 1)}, ... are also greater than \texttt{*jtr} with a smaller index.
+	\end{block}
+}
+
+\frame
+{
+	\frametitle{例題演練}
+	
+	\begin{itemize}
+		\item UVa 10810: Ultra-QuickSort
+		\item UVa 11858: Frosh Week
+	\end{itemize}
+}
+
+\frame
+{
+	\frametitle{AtCoder Beginner Contest 190 F - Shift and Inversions}
+	
+	\begin{enumerate}
+		\item<1->  $v = \{0, 1, 2, 3, 4\}$, there are $0$ inversions.
+		\item<2->  $v = \{1, 2, 3, 4, 0\}$, there are $4$ inversions: $(1, 0), (2, 0), (3, 0), (4, 0)$
+		\item<3->  $v = \{2, 3, 4, 0, 1\}$, there are $6$ inversions: $\textcolor{nthu}{(2, 0), (3, 0), (4, 0)}, (2, 1), (3, 1), (4, 1)$
+		\item<4-> $v = \{3, 4, 0, 1, 2\}$, there are $6$ inversions: $\textcolor{nthu}{(3, 0), (3, 1), (4, 0), (4, 1)}, (3, 2), (4, 2)$
+		\item<5-> $v = \{4, 0, 1, 2, 3\}$, there are $4$ inversions: $\textcolor{nthu}{(4, 0), (4, 1), (4, 2)}, (4, 3)$
+	\end{enumerate}
+	
+	\begin{itemize}
+    	\item<6->When removing $a$ from the front of the array, the number of inversion would decrease by $a$ for $a$ is the $a$-th greatest element in the array.
+    	
+    	\item<7->In like manner, when adding $a$ to the back of the array, the number would increase by $N - 1 - a$ because $a$ is less than $N - 1 - a$  elements in the array.
+	\end{itemize}
+}
+
+\subsection{Quicksort}
+
+\frame
+{
+	\frametitle{快速排序}
+	
+	\begin{enumerate}
+		\item<2-> Divide\\ ($b = 2, O(n)$)
+		\item<3-> Conquer\\ ($a = 2$)
+		\item<4-> Combine\\Merge two sorted subarrays in $O(1)$
+	\end{enumerate}
+}
 
 \section{實務}
 
