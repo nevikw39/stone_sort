@@ -11,26 +11,26 @@ void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
         return;
     // 1. Divide
     auto mid = begin + ((end - begin) >> 1); // mid = (begin + end) / 2
-    vector<int> a(begin, mid), b(mid, end);
+    vector<int> left(begin, mid), right(mid, end);
     // 2. Conquer
-    merge_sort(a.begin(), a.end());
-    merge_sort(b.begin(), b.end());
+    merge_sort(left.begin(), left.end());
+    merge_sort(right.begin(), right.end());
     // 3. Combine
-    for (auto itr = a.begin(), jtr = b.begin(); begin != end; begin++)
-        if (itr != a.end() && jtr != b.end())
+    for (auto itr = left.begin(), jtr = right.begin(); begin != end; begin++)
+        if (itr != left.end() && jtr != right.end())
         {
             if (*itr < *jtr)
                 *begin = *itr++;
             else
                 *begin = *jtr++;
         }
-        else if (itr != a.end())
+        else if (itr != left.end())
             *begin = *itr++;
         else
             *begin = *jtr++;
     //// shorter version
-    // for (auto itr = a.begin(), jtr = b.begin(); begin != end; begin++)
-    //     if (itr != a.end() && (jtr == b.end() || *itr < *jtr))
+    // for (auto itr = left.begin(), jtr = right.begin(); begin != end; begin++)
+    //     if (itr != left.end() && (jtr == right.end() || *itr < *jtr))
     //         *begin = *itr++;
     //     else
     //         *begin = *jtr++;
