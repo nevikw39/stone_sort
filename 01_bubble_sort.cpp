@@ -14,9 +14,18 @@ void bubble_sort(vector<int> &v)
 
 int main()
 {
+    vector<int> v = {8, 27, 2021, 110, 20};
+    cout << "Before sorting:\n";
+    for (const int &i : v)
+        cout << i << ' ';
+    bubble_sort(v);
+    cout << "\n\nAfter sorting:\n";
+    for (const int &i : v)
+        cout << i << ' ';
+    cout << "\n\n";
     int n;
     cin >> n;
-    vector<int> v(n);
+    v.resize(n);
     mt19937 rand((random_device())()); // create an object with random seed that generates random numbers using Mersenne Twister Algo
     for (int &i : v)
         i = rand();

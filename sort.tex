@@ -10,6 +10,8 @@
 \usepackage{algpseudocode}
 
 \definecolor{nthu}{HTML}{7F1084}
+\definecolor{secondary}{HTML}{910A17}
+\definecolor{accent}{HTML}{410A91}
 
 \usetheme{Warsaw}
 \usecolortheme[named=nthu]{structure}
@@ -93,7 +95,7 @@
 
 \frame
 {
-	\frametitle{Bubble Sort}
+	\frametitle{Slightly Improve: Bubble Sort}
 	
 	\begin{algorithmic}
 		\Procedure{Bubble Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
@@ -107,6 +109,120 @@
             \State\Return$a$
         \EndProcedure
 	\end{algorithmic}
+}
+
+\frame{
+	\frametitle{Bubble Sort Example}
+	
+	\begin{center}
+        \begin{tikzpicture}[scale=0.85, transform shape]
+        	\only<1>{
+        		\foreach \x/\val in {0/8,1/27,2/2021,3/110,4/20}{
+        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<2>{
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/2021/black,3/110/black,4/20/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<3>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/accent,2/2021/accent,3/110/black,4/20/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<4>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/2021/secondary,3/110/secondary,4/20/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<5>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/accent,3/2021/accent,4/20/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<6>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/black,3/2021/secondary,4/20/secondary}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<7>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/black,3/20/accent,4/2021/accent}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<8>{
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/110/black,3/20/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<9>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/accent,2/110/accent,3/20/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<10>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/secondary,3/20/secondary,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<11>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/20/accent,3/110/accent,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<12>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/20/black,3/110/accent,4/2021/accent}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<13>{
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/20/black,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<14>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/secondary,2/20/secondary,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<15>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<16>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/accent,3/110/accent,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<17>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/accent,4/2021/accent}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<18>{
+        		\foreach \x/\val/\col in {0/8/accent,1/20/accent,2/27/black,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<19>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<20>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/accent,3/110/accent,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<21->{
+        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/accent,4/2021/accent}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        \end{tikzpicture}
+	\end{center}
 }
 
 \section{原理}
