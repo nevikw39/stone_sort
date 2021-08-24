@@ -33,6 +33,7 @@ int main()
 {
     vector<int> v = {8, 27, 2021, 110, 20};
     cout << merge_sort_and_inversion(v.begin(), v.end()) << '\n';
+    
     int n;
     cin >> n;
     v.resize(n);

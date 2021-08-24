@@ -23,6 +23,7 @@ int main()
     for (const int &i : v)
         cout << i << ' ';
     cout << "\n\n";
+    
     int n;
     cin >> n;
     v.resize(n);
