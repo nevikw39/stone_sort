@@ -75,33 +75,33 @@
 	\end{block}
 }
 
-\frame
-{
-	\frametitle{Na\"{i}ve Approach: Selection Sort}
-	
-	\pause
-	
-	\begin{algorithmic}
-		\Procedure{Selection Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
-            \For{$i\in[0, n-1)$}
-                \State$index\_of\_min\gets i$
-                \For{$j\in[i+1, n)$}
-                	\If{$a_{index\_of\_min} > a_j$}
-						\State$index\_of\_min\gets j$
-					\EndIf
-				\EndFor
-				\State\Call{swap}{$a_i, a_{index\_of\_min}$}
-            \EndFor
-            \State\Return$a$
-        \EndProcedure
-	\end{algorithmic}
-}
+%\frame
+%{
+%	\frametitle{Na\"{i}ve Approach: Selection Sort}
+%	
+%	\pause
+%	
+%	\begin{algorithmic}
+%		\Procedure{Selection Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
+%            \For{$i\in[0, n-1)$}
+%                \State$index\_of\_min\gets i$
+%                \For{$j\in[i+1, n)$}
+%                	\If{$a_{index\_of\_min} > a_j$}
+%						\State$index\_of\_min\gets j$
+%					\EndIf
+%				\EndFor
+%				\State\Call{swap}{$a_i, a_{index\_of\_min}$}
+%            \EndFor
+%            \State\Return$a$
+%        \EndProcedure
+%	\end{algorithmic}
+%}
 
 \subsection{Bubble Sort}
 
 \frame
 {
-	\frametitle{Slightly Improve: Bubble Sort}
+	\frametitle{Na\"{i}ve Approach: Bubble Sort}
 	
 	\begin{algorithmic}
 		\Procedure{Bubble Sort}{$\{a_0, a_1, ..., a_{n-1}\}$}
@@ -118,13 +118,13 @@
 }
 
 \frame{
-	\frametitle{Bubble Sort Example}
+	\frametitle{Example}
 	
 	\begin{center}
         \begin{tikzpicture}[scale=0.85, transform shape]
         	\only<1>{
         		\foreach \x/\val in {0/8,1/27,2/2021,3/110,4/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<2>{
@@ -284,47 +284,47 @@
         \begin{tikzpicture}[scale=0.85, transform shape]
         	\only<1>{
         		\foreach \x/\val in {0/8,1/27,2/2021,3/110,4/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<2>{
         		\foreach \x/\val in {0/8,1/27,3/2021,4/110,5/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<3>{
         		\foreach \x/\val in {0/8,2/27,4/2021,5/110,6/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<4>{
         		\foreach \x/\val in {0/8,1/27,3/2021,4/110,5/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<5>{
         		\foreach \x/\val in {0/8,1/27,4/2021,6/110,7/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<6>{
         		\foreach \x/\val in {0/8,1/27,5/2021,8/110,10/20}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<7>{
         		\foreach \x/\val in {0/8,1/27,4/2021,6/20,7/110}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<8>{
         		\foreach \x/\val in {0/8,1/27,3/20,4/110,5/2021}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<9->{
         		\foreach \x/\val in {0/8,1/20,2/27,3/110,4/2021}{
-        			\node[draw,rectangle, fill=gray!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         \end{tikzpicture}
@@ -461,6 +461,40 @@
             \State\Comment{3. Combine}
         \EndProcedure
 	\end{algorithmic}
+}
+
+\frame{
+	\frametitle{Example}
+	
+	\begin{center}
+        \begin{tikzpicture}[scale=0.85, transform shape]
+        	\only<1>{
+        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/2021/black,3/110/black,4/20/nthu}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<2>{
+        		\foreach \x/\val/\col in {0/8/black,2/20/nthu,4/27/black,5/2021/black,6/110/nthu}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<3>{
+        		\foreach \x/\val/\col in {0/8/black,3/20/nthu,6/27/black,8/110/nthu,10/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<4>{
+        		\foreach \x/\val/\col in {0/8/black,2/20/nthu,4/27/black,5/110/black,6/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        	\only<5>{
+        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/black,4/2021/black}{
+        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		}
+        	}
+        \end{tikzpicture}
+	\end{center}
 }
 
 \section{實務}
