@@ -10,7 +10,7 @@ void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
     if (end - begin == 1)
         return;
     // 1. Divide
-    auto mid = begin + ((end - begin) >> 1); // mid = (begin + end) / 2
+    auto mid = begin + (end - begin) / 2; // mid = (begin + end) / 2
     vector<int> left(begin, mid), right(mid, end);
     // 2. Conquer
     merge_sort(left.begin(), left.end());
