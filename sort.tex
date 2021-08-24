@@ -57,7 +57,7 @@
 {
 	\frametitle{Introduction to Sorting}
 	
-	\begin{definition}
+	\begin{definition}[Sort]
 		Rearrange elements in an array into a sort of order.
 		
 		\begin{itemize}
@@ -333,15 +333,34 @@
 
 \frame
 {
+	\frametitle{AtCoder Beginner Contest 154 C - Distinct or Not}
+	
+	\begin{block}{Problem}
+		Determine if each element in the array is unique.
+	\end{block}
+	\pause
+	
+	\begin{block}{Idea}
+		Use nested loop??
+	\end{block}
+	\pause
+	
+	\begin{block}{Algorithm}
+		In \textbf{combine} process of merge sort, we could check whether $\texttt{*itr} == \texttt{*jtr}$.
+	\end{block}
+}
+
+\frame
+{
 	\frametitle{LeetCode 0004. Median of Two Sorted Arrays (Hard!?)}
 	
-	\begin{definition}
+	\begin{definition}[Median]
 		For an array $a$ whose size is $n$, if $n$ is odd, then its median is $a_{n/ 2}$; otherwise, it is $\frac{a_{n/2} + a_{n/2 - 1}}{2}$
 	\end{definition}
 	\pause
 	
 	\begin{block}{Algorithm}
-		Obviously, all we have to do is to perform the \textbf{combine} process of merge sort.
+		Obviously, all we have to do is to perform \textbf{combine} process of merge sort.
 	\end{block}
 }
 
@@ -349,18 +368,18 @@
 {
 	\frametitle{逆序對 (Inversion) 數量}
 	
-	\begin{definition}
+	\begin{definition}[Inversion]
 		Given a sequence $S$. If $i < j \iff S_i > S_j$, then $(i, j)$ or $(S_i, S_j)$ is called a \textbf{inversion} of $S$.
 	\end{definition}
 	\pause
 	
 	\begin{block}{Idea}
-		$\forall i \in [0, |S|)$, $\forall j \in [i, |S|)$, count whether $i < j \iff S_i > S_j$.
+		$\forall i \in [0, |S|)$, $\forall j \in [i, |S|)$, count whether $i < j \iff S_i > S_j$??
 	\end{block}
 	\pause
 	
 	\begin{block}{Algorithm}
-		When combining two sorted subarrays, if $\texttt{*itr} > \texttt{*jtr}$, then a \textbf{inversion} exists, and \texttt{*(itr + 1)}, ... are also greater than \texttt{*jtr} with a smaller index.
+		When \textbf{combining} two sorted subarrays, if $\texttt{*itr} > \texttt{*jtr}$, then a \textbf{inversion} exists, and \texttt{*(itr + 1)}, ... are also greater than \texttt{*jtr} with a smaller index.
 	\end{block}
 }
 
