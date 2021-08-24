@@ -1,7 +1,7 @@
 # Stone Campus C++ Tutorial: Sort
 ## 
 
-[Presentation](https://github.com/nevikw39/stone_sort/blob/main/sort.pdf)
+[Presentation](https://github.com/nevikw39/stone_sort/blob/master/sort.pdf)
 
 ## Prerequisite
 
