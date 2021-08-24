@@ -56,7 +56,7 @@ int main()
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    mt19937 rand((random_device())()); // create an object with random seed that generates random numbers using Mersenne Twister Algo
+    mt19937 _rand((random_device())()); // create an object with random seed that generates random numbers using Mersenne Twister Algo
     shuffle(v.begin(), v.end(), rand);
     cout << "\n\nBefore sorting:\n";
     for (const int &i : v)
@@ -70,7 +70,7 @@ int main()
     cin >> n;
     v.resize(n);
     for (int &i : v)
-        i = rand();
+        i = _rand();
     cout << "\nBefore sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
