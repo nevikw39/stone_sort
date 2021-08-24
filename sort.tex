@@ -8,6 +8,13 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{algpseudocode}
+\usepackage{listings}
+
+\lstset
+{
+  breaklines=true,
+  breakatwhitespace=true,
+}
 
 \definecolor{nthu}{HTML}{7F1084}
 \definecolor{secondary}{HTML}{910A17}
@@ -23,9 +30,9 @@
 \setbeamercolor{palette secondary}{use=structure, fg=white, bg=nthu}
 \setbeamercolor{palette tertiary}{use=structure, fg=white, bg=accent}
 \setbeamercolor{block title}{fg=white, bg=nthu!69!accent}
-\setbeamercolor{block body}{fg=white, bg=accent!87!nthu}
+\setbeamercolor{block body}{fg=white, bg=accent!69!nthu}
 \setbeamercolor{titlelike}{fg=white, bg=nthu}
-\setbeamercolor{structure}{fg=nthu!69}
+\setbeamercolor{structure}{fg=nthu!64}
 \usebeamercolor{structure}
 %\usecolortheme[named=nthu]{structure}
 \useinnertheme{rounded}
@@ -54,7 +61,7 @@
 	{
 %		\frametitle{Outline}
 		\sectionpage
-		\tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/show/show/hide]
+		\tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/shaded, subsubsectionstyle=show/show/show/hide]
 	}
 }
 
@@ -592,5 +599,50 @@
 }
 
 \section{實務}
+
+\frame
+{
+	\frametitle{\ttfamily std::merge()}
+	
+	\lstinputlisting[language=C++, firstline=8, lastline=21]{10_std_func.cpp}
+}
+
+\frame
+{
+	\frametitle{\ttfamily std::partition()}
+	
+	\small
+	\lstinputlisting[language=C++, firstline=23, lastline=42]{10_std_func.cpp}
+}
+
+\frame
+{
+	\frametitle{\ttfamily std::nth\_element()}
+	
+	\lstinputlisting[language=C++, firstline=74, lastline=75]{10_std_func.cpp}
+}
+
+\subsubsection{std::sort()}
+
+\frame
+{
+	\frametitle{\ttfamily std::sort()}
+	
+	\lstinputlisting[language=C++, firstline=83, lastline=85]{10_std_func.cpp}
+}
+
+\frame
+{
+	\frametitle{\texttt{std::sort()} with \texttt{std::string} and other...}
+	
+	\lstinputlisting[language=C++, firstline=87, lastline=90]{10_std_func.cpp}
+}
+
+\frame
+{
+	\frametitle{\texttt{std::sort()} using custom comparator}
+	
+	\lstinputlisting[language=C++, firstline=97, lastline=99]{10_std_func.cpp}
+}
 
 \end{document}
