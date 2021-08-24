@@ -12,9 +12,22 @@
 \definecolor{nthu}{HTML}{7F1084}
 \definecolor{secondary}{HTML}{910A17}
 \definecolor{accent}{HTML}{410A91}
+\definecolor{bg}{HTML}{171717}
 
-\usetheme{Warsaw}
-\usecolortheme[named=nthu]{structure}
+\setbeamercolor{normal text}{fg=white, bg=bg}
+\setbeamercolor{alerted text}{fg=secondary}
+\setbeamercolor{example text}{fg=accent}
+\setbeamercolor{background}{parent=normal text}
+\setbeamercolor{background canvas}{parent=background}
+\setbeamercolor{palette primary}{fg=white, bg=secondary}
+\setbeamercolor{palette secondary}{use=structure, fg=white, bg=nthu}
+\setbeamercolor{palette tertiary}{use=structure, fg=white, bg=accent}
+\setbeamercolor{block title}{fg=white, bg=nthu!69!accent}
+\setbeamercolor{block body}{fg=white, bg=accent!87!nthu}
+\setbeamercolor{titlelike}{fg=white, bg=nthu}
+\setbeamercolor{structure}{fg=nthu!69}
+\usebeamercolor{structure}
+%\usecolortheme[named=nthu]{structure}
 \useinnertheme{rounded}
 \useoutertheme{infolines}
 \usefonttheme{serif}
@@ -41,7 +54,7 @@
 	{
 %		\frametitle{Outline}
 		\sectionpage
-		\tableofcontents[currentsection, hideothersubsections]
+		\tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/show/show/hide]
 	}
 }
 
@@ -124,77 +137,77 @@
         \begin{tikzpicture}[scale=0.85, transform shape]
         	\only<1>{
         		\foreach \x/\val in {0/8,1/27,2/2021,3/110,4/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray,rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<2>{
-        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/2021/black,3/110/black,4/20/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/2021/gray,3/110/gray,4/20/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<3>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/accent,2/2021/accent,3/110/black,4/20/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/accent,2/2021/accent,3/110/gray,4/20/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<4>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/2021/secondary,3/110/secondary,4/20/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/2021/secondary,3/110/secondary,4/20/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<5>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/accent,3/2021/accent,4/20/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/110/accent,3/2021/accent,4/20/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<6>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/black,3/2021/secondary,4/20/secondary}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/110/gray,3/2021/secondary,4/20/secondary}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<7>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/black,3/20/accent,4/2021/accent}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/110/gray,3/20/accent,4/2021/accent}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<8>{
-        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/110/black,3/20/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/110/gray,3/20/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<9>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/accent,2/110/accent,3/20/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/accent,2/110/accent,3/20/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<10>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/110/secondary,3/20/secondary,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/110/secondary,3/20/secondary,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<11>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/20/accent,3/110/accent,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/20/accent,3/110/accent,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<12>{
-        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/20/black,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/accent,1/27/accent,2/20/gray,3/110/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<13>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/secondary,2/20/secondary,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/secondary,2/20/secondary,3/110/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<14>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/accent,2/27/accent,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/20/accent,2/27/accent,3/110/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<15>{
-        		\foreach \x/\val/\col in {0/8/accent,1/20/accent,2/27/black,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/accent,1/20/accent,2/27/gray,3/110/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         \end{tikzpicture}
@@ -284,47 +297,47 @@
         \begin{tikzpicture}[scale=0.85, transform shape]
         	\only<1>{
         		\foreach \x/\val in {0/8,1/27,2/2021,3/110,4/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<2>{
         		\foreach \x/\val in {0/8,1/27,3/2021,4/110,5/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<3>{
         		\foreach \x/\val in {0/8,2/27,4/2021,5/110,6/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<4>{
         		\foreach \x/\val in {0/8,1/27,3/2021,4/110,5/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<5>{
         		\foreach \x/\val in {0/8,1/27,4/2021,6/110,7/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<6>{
         		\foreach \x/\val in {0/8,1/27,5/2021,8/110,10/20}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<7>{
         		\foreach \x/\val in {0/8,1/27,4/2021,6/20,7/110}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<8>{
         		\foreach \x/\val in {0/8,1/27,3/20,4/110,5/2021}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<9->{
         		\foreach \x/\val in {0/8,1/20,2/27,3/110,4/2021}{
-        			\node[draw,rectangle, fill=black!10, minimum size =1cm] (c) at (\x,0) {\val};
+        			\node[draw=gray, rectangle, fill=gray!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         \end{tikzpicture}
@@ -333,7 +346,7 @@
 
 \frame
 {
-	\frametitle{例題演練}
+	\frametitle{類題演練}
 	
 	\begin{itemize}
 		\item AtCoder Beginner Contest 154 p. C - Distinct or Not
@@ -399,7 +412,7 @@
 
 \frame
 {
-	\frametitle{例題演練}
+	\frametitle{類題演練}
 	
 	\begin{itemize}
 		\item AtCoder Beginner Contest 190 p. F - Shift and Inversions
@@ -415,10 +428,10 @@
 	
 	\begin{enumerate}
 		\item<1->  $v = \{0, 1, 2, 3, 4\}$, there are $0$ inversions.
-		\item<2->  $v = \{1, 2, 3, 4, 0\}$, there are $4$ inversions: $(1, 0), (2, 0), (3, 0), (4, 0)$
-		\item<3->  $v = \{2, 3, 4, 0, 1\}$, there are $6$ inversions: $\textcolor{nthu}{(2, 0), (3, 0), (4, 0)}, (2, 1), (3, 1), (4, 1)$
-		\item<4-> $v = \{3, 4, 0, 1, 2\}$, there are $6$ inversions: $\textcolor{nthu}{(3, 0), (3, 1), (4, 0), (4, 1)}, (3, 2), (4, 2)$
-		\item<5-> $v = \{4, 0, 1, 2, 3\}$, there are $4$ inversions: $\textcolor{nthu}{(4, 0), (4, 1), (4, 2)}, (4, 3)$
+		\item<2->  $v = \{1, 2, 3, 4, 0\}$, there are $4$ inversions: $\textcolor{nthu!64}{(1, 0)}, \textcolor{secondary!64}{(2, 0), (3, 0), (4, 0)}$
+		\item<3->  $v = \{2, 3, 4, 0, 1\}$, there are $6$ inversions: $\textcolor{accent!69}{(2, 0)}, (3, 0), (4, 0), \textcolor{secondary!64}{(2, 1), (3, 1), (4, 1)}$
+		\item<4-> $v = \{3, 4, 0, 1, 2\}$, there are $6$ inversions: $\textcolor{accent!69}{(3, 0), (3, 1)}, (4, 0), (4, 1), \textcolor{secondary!64}{(3, 2), (4, 2)}$
+		\item<5-> $v = \{4, 0, 1, 2, 3\}$, there are $4$ inversions: $(4, 0), (4, 1), (4, 2), \textcolor{secondary!64}{(4, 3)}$
 	\end{enumerate}
 	
 	\begin{itemize}
@@ -504,28 +517,28 @@
 	\begin{center}
         \begin{tikzpicture}[scale=0.85, transform shape]
         	\only<1>{
-        		\foreach \x/\val/\col in {0/8/black,1/27/black,2/2021/black,3/110/black,4/20/nthu}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/27/gray,2/2021/gray,3/110/gray,4/20/nthu}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<2>{
-        		\foreach \x/\val/\col in {0/8/black,2/20/nthu,4/27/black,5/2021/black,6/110/nthu}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,2/20/nthu,4/27/gray,5/2021/gray,6/110/nthu}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<3>{
-        		\foreach \x/\val/\col in {0/8/black,3/20/nthu,6/27/black,8/110/nthu,10/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,3/20/nthu,6/27/gray,8/110/nthu,10/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<4>{
-        		\foreach \x/\val/\col in {0/8/black,2/20/nthu,4/27/black,5/110/black,6/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,2/20/nthu,4/27/gray,5/110/gray,6/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         	\only<5>{
-        		\foreach \x/\val/\col in {0/8/black,1/20/black,2/27/black,3/110/black,4/2021/black}{
-        			\node[draw=\col,rectangle, fill=\col!10, minimum size =1cm] (c) at (\x,0) {\val};
+        		\foreach \x/\val/\col in {0/8/gray,1/20/gray,2/27/gray,3/110/gray,4/2021/gray}{
+        			\node[draw=\col,rectangle, fill=\col!92, minimum size =1cm] (c) at (\x,0) {\val};
         		}
         	}
         \end{tikzpicture}
@@ -557,7 +570,7 @@
 
 \frame
 {
-	\frametitle{例題演練}
+	\frametitle{類題演練}
 	
 	\begin{itemize}
 		\item LeetCode 0215. Kth Largest Element in an Array (Medium)
@@ -573,8 +586,8 @@
 	非常單純的模板題，我們以此來示範 $pivot$ 之選擇。
 	
 	\begin{description}
-		\item[Always choose last element] 40ms, beats $17.10\%$ submissions
-		\item[Randomly choose] 8ms, faster than $75.44\%$ submissions
+		\item[Always last] 40ms, beats $17.10\%$ submissions
+		\item[Randomly] 8ms, faster than $75.44\%$ codes
 	\end{description}
 }
 
