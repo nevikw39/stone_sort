@@ -333,7 +333,18 @@
 
 \frame
 {
-	\frametitle{AtCoder Beginner Contest 154 C - Distinct or Not}
+	\frametitle{例題演練}
+	
+	\begin{itemize}
+		\item AtCoder Beginner Contest 154 p. C - Distinct or Not
+		\item LeetCode 0004. Median of Two Sorted Arrays (Hard!?)
+	\end{itemize}
+}
+
+\frame
+{
+	\frametitle{Distinct or Not}
+	\framesubtitle{AtCoder Beginner Contest 154 p. C}
 	
 	\begin{block}{Problem}
 		Determine if each element in the array is unique.
@@ -346,13 +357,14 @@
 	\pause
 	
 	\begin{block}{Algorithm}
-		In \textbf{combine} process of merge sort, we could check whether $\texttt{*itr} == \texttt{*jtr}$.
+		In \textbf{combine} process of \textsc{Merge Sort}, we could check whether $\texttt{*itr} == \texttt{*jtr}$.
 	\end{block}
 }
 
 \frame
 {
-	\frametitle{LeetCode 0004. Median of Two Sorted Arrays (Hard!?)}
+	\frametitle{Median of Two Sorted Arrays}
+	\framesubtitle{LeetCode 0004 (Hard!?)}
 	
 	\begin{definition}[Median]
 		For an array $a$ whose size is $n$, if $n$ is odd, then its median is $a_{n/ 2}$; otherwise, it is $\frac{a_{n/2} + a_{n/2 - 1}}{2}$
@@ -360,9 +372,11 @@
 	\pause
 	
 	\begin{block}{Algorithm}
-		Obviously, all we have to do is to perform \textbf{combine} process of merge sort.
+		Obviously, all we have to do is to perform \textbf{combine} process of \textsc{Merge Sort}.
 	\end{block}
 }
+
+\subsubsection{Inversion}
 
 \frame
 {
@@ -388,6 +402,7 @@
 	\frametitle{例題演練}
 	
 	\begin{itemize}
+		\item AtCoder Beginner Contest 190 p. F - Shift and Inversions
 		\item UVa 10810: Ultra-QuickSort
 		\item UVa 11858: Frosh Week
 	\end{itemize}
@@ -395,7 +410,8 @@
 
 \frame
 {
-	\frametitle{AtCoder Beginner Contest 190 F - Shift and Inversions}
+	\frametitle{Shift and Inversions}
+	\framesubtitle{AtCoder Beginner Contest 190 p. F}
 	
 	\begin{enumerate}
 		\item<1->  $v = \{0, 1, 2, 3, 4\}$, there are $0$ inversions.
@@ -419,7 +435,7 @@
 	\frametitle{快速排序}
 	
 	\begin{description}
-		\item<1->[Divide]Select a $pivot$ value and split the array into less slice and greater slice ($b = 2, O(n)$)
+		\item<1->[Divide]Select a $pivot$ value and separate the array into less partition and greater partition ($b = 2, O(n)$)
 		\item<2->[Conquer]Sort two slices recursively ($a = 2$)
 		\item<3->[Combine]Nothing to do, the array have been sorted. ($O(1)$)
 	\end{description}
@@ -429,7 +445,7 @@
 {
 	\frametitle{原地分割 (In-place Division)}
 	
-	How could we split the array into less slice and greater slice??\pause
+	How could we separate the array into less partition and greater partition??\pause
 	
 	Suppose two slices are \texttt{[begin, itr)} and \texttt{[itr + 1, end)}.\pause
 	
@@ -446,9 +462,9 @@
 {
 	\frametitle{Pivot}
 	
-	The choice of $pivot$ plays a significant role in the efficiency of Quicksort.\pause
+	The choice of $pivot$ plays a significant role when it comes to the efficiency of \textsc{Quicksort}.\pause
 	
-	Examples in classical textbook ``Introduction to Algorithm'' by C., S., L., R. choose the last element to be $pivot$.\pause
+	In classical textbook ``Introduction to Algorithm'', C., S., L., R. chose the last element to be $pivot$.\pause
 	
 	Nevertheless, fixed $pivot$ may run into troubles because if unfortunately $pivot$ is minimum or maximum every time, the time complexity would decline to $O(n^2)$.\pause
 	
@@ -514,6 +530,52 @@
         	}
         \end{tikzpicture}
 	\end{center}
+}
+
+\subsubsection{Quickselect}
+
+\frame
+{
+	\frametitle{快速選擇 Quickselect}
+	
+	\begin{block}{Problem}
+		Find the $k$-th element in the array.
+	\end{block}
+	\pause
+	
+	\begin{block}{Idea}
+		Sort the array??
+	\end{block}
+	\pause
+	
+	\begin{block}{Algorithm}
+		When \textbf{dividing} array into $less$ and $greater$ parts in \textsc{Quicksort}, we could know the size of them. If $k < |less|$, we only need to recur to less part and greater one could be ignored; vice versa.
+		
+		Note that if we recur to greater part, we should update $k$ to $k - |less| - 1$ because the $k$-th element in the original array is $k - |less| - 1$-th element in the greater part.
+	\end{block}
+}
+
+\frame
+{
+	\frametitle{例題演練}
+	
+	\begin{itemize}
+		\item LeetCode 0215. Kth Largest Element in an Array (Medium)
+		\item AtCoder Beginner Contest 161 p. C - Popular Vote
+	\end{itemize}
+}
+
+\frame
+{
+	\frametitle{Kth Largest Element in an Array}
+	\framesubtitle{LeetCode 0215 (Medium)}
+	
+	非常單純的模板題，我們以此來示範 $pivot$ 之選擇。
+	
+	\begin{description}
+		\item[Always choose last element] 40ms, beats $17.10\%$ submissions
+		\item[Randomly choose] 8ms, faster than $75.44\%$ submissions
+	\end{description}
 }
 
 \section{實務}
