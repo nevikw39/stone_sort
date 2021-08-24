@@ -9,8 +9,7 @@ long long merge_sort_and_inversion(vector<long long>::iterator begin, vector<lon
         return 0;
     auto mid = begin + ((end - begin) >> 1);
     vector<long long> left(begin, mid), right(mid, end);
-    long long inversions = merge_sort_and_inversion(left.begin(), left.end());
-    inversions += merge_sort_and_inversion(right.begin(), right.end());
+    long long inversions = merge_sort_and_inversion(left.begin(), left.end()) + merge_sort_and_inversion(right.begin(), right.end());
     for (auto itr = left.begin(), jtr = right.begin(); begin != end; begin++)
         if (itr != left.end() && jtr != right.end())
         {
