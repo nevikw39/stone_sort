@@ -5,6 +5,7 @@ Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/so
 
 ## Prerequisite
 
+- Swap
 - Range-based loop
 - Iterator
 
