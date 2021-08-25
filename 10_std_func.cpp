@@ -11,7 +11,7 @@ void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
     if (end - begin == 1)
         return;
     // 1. Divide
-    auto mid = begin + ((end - begin) >> 1);
+    auto mid = begin + ((end - begin) >> 1); // equal to `begin+(end-begin)/2'
     vector<int> left(begin, mid), right(mid, end);
     // 2. Conquer
     merge_sort(left.begin(), left.end());
@@ -38,12 +38,12 @@ void quicksort(vector<int>::iterator begin, vector<int>::iterator end)
     // Nothing to do
 }
 
-bool cmp_sort(int lhs, int rhs)
+bool cmp_sort(int lhs, int rhs) // result be like: {1, 3, 5, 4, 2, 0}
 {
-    if (lhs & 1 ^ rhs & 1)
-        return lhs & 1;
+    if (lhs & 1 ^ rhs & 1) // if l%2 != r%2
+        return lhs & 1;    // return true if l is odd otherwise return false
     else
-        return lhs & 1 ? lhs < rhs : lhs > rhs;
+        return lhs & 1 ? lhs < rhs : lhs > rhs; // if l, r are both odd then return l<r else return l>r
 }
 
 int main()
