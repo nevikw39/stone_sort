@@ -1,7 +1,7 @@
 # Stone Campus C++ Tutorial: Sort
 ## By _nevikw39_
 
-[Presentation](https://github.com/nevikw39/stone_sort/blob/master/sort.pdf)
+Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/sort.pdf). You can download it to yuour computer. Please view it in _Single Page_ mode for the sake of attaining better reading experiance.
 
 ## Prerequisite
 
@@ -27,4 +27,4 @@
 ## Homework
 
 - Rewrite your own **Merge Sort** and **Quicksort**
-- Choose some problems above
+- Do some problems above. For **Quickselect** ones, you may use your own `quickselect()` as well as `std::nth_element()`
