@@ -1,4 +1,4 @@
-#if !__clang__ || __clang_major__ >= 12
+#if defined(__clang__) && __clang_major__ >= 12
 #include <iostream>
 #include <vector>
 #include <random> // for mt19937
@@ -26,7 +26,7 @@ private:
             return quickselect(begin, itr, k);
         else if (k == itr - begin)
             return *itr;
-        else                                                         // the size of less aprt is (itr - begin) ans pivot alse counts
+        else                                                         // the size of less part is (itr - begin) ans pivot alse counts
             return quickselect(itr + 1, end, k - (itr - begin) - 1); // so the k-th in origin is (k - (itr - begin) - 1) in greater part
     }
 
@@ -37,7 +37,7 @@ public:
     }
 };
 
-#if !__clang__ || __clang_major__ >= 12
+#if defined(__clang__) && __clang_major__ >= 12
 int main()
 {
     vector<int> a = {3, 2, 1, 5, 6, 4}, b = {3, 2, 3, 1, 2, 4, 5, 5, 6};
