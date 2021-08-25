@@ -1,7 +1,7 @@
 # Stone Campus C++ Tutorial: Sort
 ## By _nevikw39_
 
-Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/sort.pdf). You can download it to yuour computer. Please view it in _Single Page_ mode for the sake of attaining better reading experiance.
+Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/sort.pdf). You can download it to yuour computer. Please view it in _Single Page_ mode for the sake of attaining better reading experience.
 
 ## Prerequisite
 
