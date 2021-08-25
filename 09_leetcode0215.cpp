@@ -15,9 +15,8 @@ private:
         int n = end - begin;
         if (n <= 1)
             return *begin;
-        auto itr = begin, pivot = begin + (_rand() % n + n) % n; // randomly pick pivot
-        swap(*pivot, *(end - 1));                                // swap random pivot to last so that we won't process it
-        pivot = end - 1;                                         // update pivot to its exact place
+        auto itr = begin, pivot = end - 1;
+        swap(*pivot, *(begin + (_rand() % n + n) % n)); // randomly pick pivot
         for (auto jtr = begin; jtr != pivot; jtr++)
             if (*jtr < *pivot)
                 swap(*itr++, *jtr);
