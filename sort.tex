@@ -248,7 +248,7 @@
 	\frametitle{合併排序}
 	
 	\begin{description}
-		\item<1->[Divide]Split array into left and right subarrays ($b = 2, O(1)$)
+		\item<1->[Divide]Split array into $left$ and $right$ subarrays ($b = 2, O(1)$)
 		\item<2->[Conquer]Sort two subarrays recursively ($a = 2$)
 		\item<3->[Combine]Merge two sorted subarrays in $O(n)$
 	\end{description}
@@ -455,8 +455,8 @@
 	\frametitle{快速排序}
 	
 	\begin{description}
-		\item<1->[Divide]Select a $pivot$ value and separate the array into less partition and greater partition ($b = 2, O(n)$)
-		\item<2->[Conquer]Sort two slices recursively ($a = 2$)
+		\item<1->[Divide]Select a $pivot$ value and separate the array into $less$ partition and $greater$ partition ($b = 2, O(n)$)
+		\item<2->[Conquer]Sort two partitions recursively ($a = 2$)
 		\item<3->[Combine]Nothing to do, the array have been sorted. ($O(1)$)
 	\end{description}
 }
@@ -465,17 +465,17 @@
 {
 	\frametitle{原地分割 (In-place Division)}
 	
-	How could we separate the array into less partition and greater partition??\pause
+	How could we separate the array into $less$ partition and $greater$ partition??\pause
 	
-	Suppose two slices are \texttt{[begin, itr)} and \texttt{[itr + 1, end)}.\pause
+	Suppose two slices are $[begin, itr)$ and $[itr + 1, end)$.\pause
 	
-	Initially, \texttt{itr} = begin.\pause
+	Initially, $itr\gets begin$, $pivot\gets end-1$.\pause
 	
-	We traverse from \texttt{begin} through \texttt{pivot} with \texttt{jtr}.\pause
+	We traverse from $begin$ through $pivot$ with $jtr$.\pause
 	
-	If \texttt{*jtr < *pivot}, then we put it to \texttt{*itr} and forward \texttt{itr}.\pause
+	If $*jtr < *pivot$, then we put it to $*itr$ and forward $itr$.\pause
 	
-	Finally, swap \texttt{*itr} and \texttt{pivot}.
+	Finally, swap $*itr$ and $*pivot$.
 }
 
 \frame
