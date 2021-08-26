@@ -23,7 +23,7 @@ Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/so
 ## Quicksort (Quickselect)
 
 - [LeetCode 0215. Kth Largest Element in an Array (Medium)](https://leetcode.com/problems/kth-largest-element-in-an-array)
-- [AtCoder Beginner Contest 161 p. C - Popular Vote](https://atcoder.jp/contests/abc154/tasks/abc154_c)
+- [AtCoder Beginner Contest 161 p. B - Popular Vote](https://atcoder.jp/contests/abc161/tasks/abc161_b)
 
 ## Homework
 
