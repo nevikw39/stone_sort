@@ -71,7 +71,7 @@
 
 \frame{\tableofcontents}
 
-\section{序}
+\section{Abstract}
 
 \frame
 {
@@ -221,7 +221,7 @@
 	\end{center}
 }
 
-\section{原理}
+\section{Implementation}
 
 \frame
 {
@@ -271,10 +271,10 @@
 
 \frame
 {
-	\frametitle{虛擬碼}
+	\frametitle{Pseudocode}
 	
 	\begin{algorithmic}
-		\Procedure{Merge Sort}{$*begin, *end\}$}
+		\Procedure{Merge Sort}{$*begin, *end$}
 			\pause
 			\If{end - begin = 1}\Comment{0. Recursion boundary}
 				\State\Return
@@ -387,7 +387,7 @@
 	\framesubtitle{LeetCode 0004 (Hard!?)}
 	
 	\begin{definition}[Median]
-		For an array $a$ whose size is $n$, if $n$ is odd, then its median is $a_{n/ 2}$; otherwise, it is $\frac{a_{n/2} + a_{n/2 - 1}}{2}$
+		For an sorted array $a$ whose size is $n$, if $n$ is odd, then its median is $a_{n/ 2}$; otherwise, it is $\frac{a_{n/2} + a_{n/2 - 1}}{2}$
 	\end{definition}
 	\pause
 	
@@ -444,7 +444,7 @@
 	\begin{itemize}
     	\item<6->When removing $a$ from the front of the array, the number of inversion would decrease by $a$ for $a$ is the $a$-th smallest element in the array.
     	
-    	\item<7->In like manner, when adding $a$ to the back of the array, the number would increase by $N - 1 - a$ because $a$ is less than $N - 1 - a$  elements in the array.
+    	\item<7->In like manner, when appending $a$ to the back of the array, the number would increase by $N - 1 - a$ because $a$ is less than $N - 1 - a$  elements in the array.
 	\end{itemize}
 }
 
@@ -467,7 +467,7 @@
 	
 	How could we separate the array into $less$ partition and $greater$ partition??\pause
 	
-	Suppose two slices are $[begin, itr)$ and $[itr + 1, end)$.\pause
+	Suppose two partitions are $[begin, itr)$ and $[itr + 1, end)$.\pause
 	
 	Initially, $itr\gets begin$, $pivot\gets end-1$.\pause
 	
@@ -493,10 +493,10 @@
 
 \frame
 {
-	\frametitle{虛擬碼}
+	\frametitle{Pseudocode}
 	
 	\begin{algorithmic}
-		\Procedure{Quicksort}{$\{*begin, *end\}$}
+		\Procedure{Quicksort}{$*begin, *end$}
 			\pause
 			\If{$end - begin \leq 1$}\Comment{0. Recursion boundary}
 				\State\Return
@@ -598,7 +598,7 @@
 	\end{description}
 }
 
-\section{實務}
+\section{Easy-to-use built-in functions}
 
 \frame
 {
@@ -649,5 +649,40 @@
     \end{lstlisting}
 	\lstinputlisting[language=C++, firstline=97, lastline=99]{10_std_func.cpp}
 \end{frame}
+
+\section{Appendix}
+
+\frame
+{
+	\frametitle{Stable sorts vs. Unstable sorts}
+	
+	\begin{definition}[Stability]
+		For non-distinct elements, whether they are outputted in the same order they inputted.
+	\end{definition}
+}
+
+\frame
+{
+	\frametitle{Comparison sorts vs. Distribution sorts}
+	
+	\textsc{Bubble sort}, \textsc{merge sort}, \textsc{Quicksort} and ... are called \textit{Comparison sorts} because all of them are based on a binary boolean relation (oft $ < $) and aimed at swapping all inversions.
+	
+	On the other hand, there are other means.
+}
+
+\frame
+{
+	\frametitle{Age sort}
+	\framesubtitle{UVa 11462}
+	
+	There are up to $2 \times 10^6$ people aging between $[1, 100]$ in the country. Our goal is to sort them by their age.
+}
+
+\frame
+{
+	\frametitle{Counting sort}
+	
+	If the \textit{range} of input is small enough, then we could record the occurrence of for all element in the \textit{range}.
+}
 
 \end{document}
