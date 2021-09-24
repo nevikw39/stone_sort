@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <random> // for mt19937
+#include <chrono> // for steady_clock, ...
 
 using namespace std;
+using namespace chrono;
 
 void merge_sort(vector<int>::iterator begin, vector<int>::iterator end)
 {
@@ -57,10 +59,13 @@ int main()
     cout << "Before sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
+    auto start = steady_clock::now();
     merge_sort(v.begin(), v.end());
+    auto end = steady_clock::now();
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    cout << '\n';
+    cout << "\nMerge Sort: "
+         << duration<double, std::milli>(end - start).count() << "ms.\n";
     return 0;
 }

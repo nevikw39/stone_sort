@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <random> // for mt19937
+#include <chrono> // for steady_clock, ...
 
 using namespace std;
+using namespace chrono;
 
 void quicksort_in_place(vector<int>::iterator begin, vector<int>::iterator end)
 {
@@ -56,7 +58,7 @@ int main()
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    
+
     mt19937 _rand((random_device())()); // create an object with random seed that generates random numbers using Mersenne Twister Algo
     shuffle(v.begin(), v.end(), _rand);
     cout << "\n\nBefore sorting:\n";
@@ -66,8 +68,7 @@ int main()
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    cout << '\n';
-
+    cout << "\n\n";
 
     int n;
     cin >> n;
@@ -77,19 +78,26 @@ int main()
     cout << "\nBefore sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
+    auto start = steady_clock::now();
     quicksort_in_place(v.begin(), v.end());
+    auto end = steady_clock::now();
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    
+    cout << "\nQuicksort (in-place): "
+         << duration<double, std::milli>(end - start).count() << "ms.\n";
+
     shuffle(v.begin(), v.end(), _rand);
-    cout << "\n\nBefore sorting:\n";
+    cout << "\nBefore sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
+    start = steady_clock::now();
     quicksort(v.begin(), v.end());
+    end = steady_clock::now();
     cout << "\n\nAfter sorting:\n";
     for (const int &i : v)
         cout << i << ' ';
-    cout << '\n';
+    cout << "\nQuicksort: "
+         << duration<double, std::milli>(end - start).count() << "ms.\n";
     return 0;
 }
