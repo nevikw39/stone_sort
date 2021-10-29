@@ -24,6 +24,7 @@ Here is the [presentation](https://github.com/nevikw39/stone_sort/blob/master/so
 
 - [LeetCode 0215. Kth Largest Element in an Array (Medium)](https://leetcode.com/problems/kth-largest-element-in-an-array)
 - [AtCoder Beginner Contest 161 p. B - Popular Vote](https://atcoder.jp/contests/abc161/tasks/abc161_b)
+- [LeetCode 1915. Number of Wonderful Substrings (Medium)](https://leetcode.com/problems/number-of-wonderful-substrings/)
 
 ## Homework
 
